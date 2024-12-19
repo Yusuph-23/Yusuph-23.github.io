@@ -10,6 +10,75 @@
 </head>
 <body>
 
+    <div class="hero-header">
+        <div class="wrapper">
+            <header>
+                <div class="logo">
+                    <i class="fa-solid fa-y"></i>
+                    <div class="logo-text">Yusuph Graphics</div>
+                </div>
+                <nav>
+                    <div class="togglebtn">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <ul class="navlinks">
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#">Portfolio</a></li>
+                        <li><a href="#">Resume</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <div class="container">
+                <div class="hero-pic">
+                    <img src="own (1).jpg" alt="">
+                </div>
+                <div class="hero-text">
+                    <h5>Hi I'm <span class="input">Graphics Designer</span></h5>
+                    <h1>Yusuph Mteleka</h1>
+                    <p>Welcome to my website portfolio. Here you can view my works and understand who I'm I, just feel free to be connected with me right now and onwards. The cost I charge is affordable to the people from all economic status. Contact me today to make your work good and amazing.
+                    <div class="btn-group">
+                        <a href="#" class="btn active">Download CV</a>
+                        <a href="#" class="btn">Contact</a>
+                    </div>
+    
+                    <div class="social">
+                        <a href="#"><i class="fa-brands fa-facebook"></i></a>
+                        <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                        <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                        <a href="#"><i class="fa-brands fa-behance"></i></a>
+                        <a href="#"><i class="fa-brands fa-linkeldin"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    
+      <!--typed js for typing text effects-->
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/typed.js/2.0.10/typed.min.js"></script>
+      <script>
+        /*This for button click show hidden navbar*/
+        var togglebtn=document.querySelector(".togglebtn");
+        var nav=document.querySelector(".navlinks");
+        var links=document.querySelector(".navlinks li");
+    
+        togglebtn.addEventListener("click", function(){
+            this.classList.toggle("click");
+            nav.classList.toggle("open");
+        })
+    
+        var typed=new Typed(".input",{
+            strings:["Graphics Designer", "UX Designer", "Photo Editing", "Motion Graphics", "Front End Designer"],
+            typedSpeed:70,
+            backSpeed:55,
+            loop:true
+        })
+      </script>
+    </body>
+    </html>
 
 <section>
     <div class="services" id="services">
