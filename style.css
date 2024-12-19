@@ -1,6 +1,6 @@
 .container{
     display: block;
-    background-color: #081b29;
+    background-color: #250558;
 }
 
 #services{
@@ -100,7 +100,7 @@ margin-top: 50px;
 
 body{
     overflow: hidden;
-    background-image:url();
+    background-image:url(bg6.jpg);
 }
 
 .hero-header{
