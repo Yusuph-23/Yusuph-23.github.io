@@ -623,14 +623,14 @@ footer {
 
 /* Dark Mode Styles */
 .dark-mode {
-    --primary-color: #4a89dc;
-    --secondary-color: #ff9e3f;
-    --dark-color: #121212;
-    --light-color: #1e1e1e;
-    --text-color: #f0f0f0;
-    --text-light: #b0b0b0;
-    --white: #121212;
-    --black: #f8f9fa;
+    /* Dark mode variables */
+    --dark-primary: #3a7bd5;  /* Brighter blue for better visibility */
+    --dark-secondary: #ff8c42; /* More vibrant orange */
+    --dark-bg: #121826;       /* Dark blue-gray instead of pure black */
+    --dark-card: #1e2432;     /* Slightly lighter than background */
+    --dark-text: #f0f4f8;     /* Soft white for better readability */
+    --dark-text-light: #c2c8d0; /* Light gray for secondary text */
+    --dark-border: #2d3648;   /* Subtle borders */
 }
 
 .dark-mode body {
