@@ -31,7 +31,9 @@ body {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
-    font-weight: 800;
+    .hero-content h1{
+        font-weight: bolder;
+    }
 }
 
 section {
