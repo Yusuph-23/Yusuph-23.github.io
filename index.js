@@ -1,218 +1,177 @@
-
-
-document.querySelectorAll('a.nav-link').forEach(link => {
-    link.addEventListener('click', function(e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href');
-        const targetElement = document.querySelector(targetId);
-        if (targetElement) {
-            targetElement.scrollIntoView({ behavior: 'smooth' });
-        }
+document.addEventListener('DOMContentLoaded', function() {
+    // Mobile Menu Toggle
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const mainNav = document.querySelector('.main-nav');
+    
+    mobileMenuBtn.addEventListener('click', function() {
+        mainNav.classList.toggle('active');
+        this.querySelector('i').classList.toggle('fa-times');
+        this.querySelector('i').classList.toggle('fa-bars');
     });
-});
-
-// Add pulse animation on click
-document.querySelectorAll('a.nav-link').forEach(link => {
-    link.addEventListener('click', function() {
-        this.classList.add('pulse-animation');
-        setTimeout(() => {
-            this.classList.remove('pulse-animation');
-        }, 700);
-    });
-});
-
-// Get the theme toggle button and its icon
-const themeToggleBtn = document.getElementById('themeToggle');
-const themeToggleIcon = themeToggleBtn.querySelector('i');
-
-// Function to set the theme (light or dark)
-const setTheme = (theme) => {
-    if (theme === 'dark') {
-        document.body.classList.add('dark-mode');
-        themeToggleIcon.classList.remove('fa-moon');
-        themeToggleIcon.classList.add('fa-sun');
-        localStorage.setItem('theme', 'dark');
-    } else {
-        document.body.classList.remove('dark-mode');
-        themeToggleIcon.classList.remove('fa-sun');
-        themeToggleIcon.classList.add('fa-moon');
-        localStorage.setItem('theme', 'light');
-    }
-};
-
-// Initialize theme based on local storage or system preference
-const savedTheme = localStorage.getItem('theme');
-if (savedTheme) {
-    setTheme(savedTheme);
-} else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
-    setTheme('dark'); // Default to dark if system preference is dark
-} else {
-    setTheme('light'); // Default to light
-}
-
-// Theme toggle button click listener
-themeToggleBtn.addEventListener('click', () => {
-    if (document.body.classList.contains('dark-mode')) {
-        setTheme('light');
-    } else {
-        setTheme('dark');
-    }
-});
-
-// index.js
-// This file handles interactive elements and dynamic content for the portfolio.
-
-document.addEventListener('DOMContentLoaded', () => {
-    console.log('Portfolio website loaded successfully!');
-
-    // Get all navigation links and sections
-    const navLinks = document.querySelectorAll('.nav-link');
-    const sections = document.querySelectorAll('main section[id]'); // Select sections with an ID within main
-    const scrollTopBtn = document.getElementById('scrollTopBtn'); // Get the scroll to top button
-
-
-
-
-
-    // Initialize theme based on local storage or system preference
-
-
-    // --- Responsive Navigation Logic ---
-    const menuToggleButton = document.getElementById('menuToggle');
-    const mainNav = document.getElementById('mainNav'); // This is the <nav> element holding the links
-
-    // Function to close the mobile menu
-    const closeMobileMenu = () => {
-        // Only hide if the menu is currently visible AND the screen is small (less than sm breakpoint)
-        // Also ensure mainNav exists before trying to access its classList
-        if (mainNav && !mainNav.classList.contains('hidden') && window.innerWidth < 640) {
-            mainNav.classList.add('hidden');
-        }
-    };
-
-    // Toggle mobile menu visibility on button click
-    if (menuToggleButton && mainNav) { // Ensure both elements exist before adding listener
-        menuToggleButton.addEventListener('click', () => {
-            mainNav.classList.toggle('hidden'); // Toggles Tailwind's 'hidden' class
-        });
-    }
-
-
-    // Close mobile menu when a nav link is clicked (for smoother UX)
+    
+    // Close mobile menu when clicking on a link
+    const navLinks = document.querySelectorAll('.main-nav ul li a');
     navLinks.forEach(link => {
-        link.addEventListener('click', (e) => {
-            // Existing scroll and active class logic remains here
-            const targetId = e.currentTarget.getAttribute('href').substring(1);
-            const targetElement = document.getElementById(targetId);
-            if (targetElement) { // Ensure target element exists before scrolling
-                targetElement.scrollIntoView({ behavior: 'smooth' });
+        link.addEventListener('click', function() {
+            if (mainNav.classList.contains('active')) {
+                mainNav.classList.remove('active');
+                mobileMenuBtn.querySelector('i').classList.remove('fa-times');
+                mobileMenuBtn.querySelector('i').classList.add('fa-bars');
             }
-            addActiveClass(targetId, true);
-
-            closeMobileMenu(); // Close menu after clicking a link
         });
     });
-
-    // Ensure nav visibility is correct on window resize
-    window.addEventListener('resize', () => {
-        if (mainNav) { // Ensure mainNav exists
-            if (window.innerWidth >= 640) { // If screen size is 'sm' (640px) or larger
-                mainNav.classList.remove('hidden'); // Ensure nav is visible on desktop
-            } else {
-                // If screen size is smaller than 'sm', make sure menu is hidden unless toggled
-                // This effectively "closes" the menu if you resize from desktop to mobile
-                mainNav.classList.add('hidden');
-            }
-        }
-    });
-
-    // Initial setup for nav visibility based on window size on page load
-    if (mainNav) { // Ensure mainNav exists
-        if (window.innerWidth < 640) {
-            mainNav.classList.add('hidden'); // Ensure hidden on small screens initially
+    
+    // Header scroll effect
+    window.addEventListener('scroll', function() {
+        const header = document.querySelector('header');
+        if (window.scrollY > 100) {
+            header.classList.add('scrolled');
         } else {
-            mainNav.classList.remove('hidden'); // Ensure visible on large screens initially
-        }
-    }
-    // --- End Responsive Navigation Logic ---
-
-
-    // --- Scroll-to-Top Button & Active Navigation State Logic ---
-    // Function to remove active class from all nav links
-    const removeActiveClass = () => {
-        navLinks.forEach(link => {
-            link.classList.remove('active-nav-link');
-            link.classList.remove('pulse-animation'); // Also remove pulse animation
-        });
-    };
-
-    // Function to add active class to the current nav link and trigger pulse animation
-    const addActiveClass = (id, triggerPulse = false) => {
-        const correspondingLink = document.querySelector(`.nav-link[href="#${id}"]`);
-        if (correspondingLink) {
-            removeActiveClass(); // Remove active class from all before adding to current
-            correspondingLink.classList.add('active-nav-link');
-
-            if (triggerPulse) {
-                // Add pulse animation and remove it after a short delay
-                correspondingLink.classList.add('pulse-animation');
-                setTimeout(() => {
-                    correspondingLink.classList.remove('pulse-animation');
-                }, 700); // Match animation duration
-            }
-        }
-    };
-
-    // Scroll event listener for active navigation state and scroll-to-top button visibility
-    window.addEventListener('scroll', () => {
-        let currentSectionId = 'home'; // Default to home if at the very top
-
-        sections.forEach(section => {
-            // Get the position of the section relative to the viewport
-            const rect = section.getBoundingClientRect();
-            // Check if the section is mostly in view
-            // Adjust 0.3 (30%) to change when the section becomes active
-            if (rect.top <= window.innerHeight * 0.3 && rect.bottom >= window.innerHeight * 0.3) {
-                currentSectionId = section.id;
-            }
-        });
-
-        // Handle the case when scrolling to the very top
-        if (window.scrollY === 0) {
-            currentSectionId = 'home';
-        }
-
-        // Only update active class on scroll, do not trigger pulse animation
-        addActiveClass(currentSectionId, false);
-
-        // Show/hide scroll to top button
-        if (scrollTopBtn) { // Ensure button exists before checking scroll
-            if (window.scrollY > 300) { // Show button after scrolling 300px down
-                scrollTopBtn.classList.add('show');
-            } else {
-                scrollTopBtn.classList.remove('show');
-            }
+            header.classList.remove('scrolled');
         }
     });
-
-    // Initial active state set on page load
-    const initialHash = window.location.hash.substring(1);
-    if (initialHash && document.getElementById(initialHash)) {
-        addActiveClass(initialHash, false); // No pulse on initial load
-    } else {
-        addActiveClass('home', false); // Default to home, no pulse
-    }
-
-    // Click event listener for scroll to top button
-    if (scrollTopBtn) { // Ensure button exists before adding listener
-        scrollTopBtn.addEventListener('click', () => {
-            window.scrollTo({
-                top: 0,
-                behavior: 'smooth' // Smooth scroll to the top
+    
+    // Portfolio filtering
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const portfolioItems = document.querySelectorAll('.portfolio-item');
+    
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', function() {
+            // Remove active class from all buttons
+            filterBtns.forEach(btn => btn.classList.remove('active'));
+            // Add active class to clicked button
+            this.classList.add('active');
+            
+            const filterValue = this.getAttribute('data-filter');
+            
+            portfolioItems.forEach(item => {
+                if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                    item.style.display = 'block';
+                } else {
+                    item.style.display = 'none';
+                }
             });
-            // After scrolling to top, ensure 'home' link is active
-            addActiveClass('home', true); // Trigger pulse on home link after scrolling up
+        });
+    });
+    
+    // Smooth scrolling for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            const targetId = this.getAttribute('href');
+            const targetElement = document.querySelector(targetId);
+            
+            if (targetElement) {
+                window.scrollTo({
+                    top: targetElement.offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+    
+    // Animate stats counter
+    const statNumbers = document.querySelectorAll('.stat-number');
+    
+    function animateStats() {
+        statNumbers.forEach(number => {
+            const target = +number.getAttribute('data-count');
+            const count = +number.innerText;
+            const increment = target / 100;
+            
+            if (count < target) {
+                number.innerText = Math.ceil(count + increment);
+                setTimeout(animateStats, 20);
+            } else {
+                number.innerText = target;
+            }
         });
     }
-    // --- End Scroll-to-Top Button & Active Navigation State Logic ---
+    
+    // Trigger stats animation when section is in view
+    const aboutSection = document.querySelector('#about');
+    const options = {
+        threshold: 0.5
+    };
+    
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                animateStats();
+                observer.unobserve(entry.target);
+            }
+        });
+    }, options);
+    
+    observer.observe(aboutSection);
+    
+    // Set current year in footer
+    const yearElement = document.getElementById('year');
+    if (yearElement) {
+        yearElement.textContent = new Date().getFullYear();
+    }
+    
+    // Form submission (example)
+    const contactForm = document.querySelector('.contact-form');
+    if (contactForm) {
+        contactForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for your message! We will get back to you soon.');
+            this.reset();
+        });
+    }
+    
+    // Dark/Light Mode Toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+
+    // Check for saved user preference or use system preference
+    const currentTheme = localStorage.getItem('theme') || 
+                        (prefersDarkScheme.matches ? 'dark' : 'light');
+
+    if (currentTheme === 'dark') {
+        document.body.classList.add('dark-mode');
+    }
+
+    themeToggle.addEventListener('click', function() {
+        document.body.classList.toggle('dark-mode');
+        const theme = document.body.classList.contains('dark-mode') ? 'dark' : 'light';
+        localStorage.setItem('theme', theme);
+    });
+
+    // Update the header styling in dark mode
+    function updateHeaderDarkMode() {
+        const header = document.querySelector('header');
+        if (document.body.classList.contains('dark-mode')) {
+            header.style.backgroundColor = '#1e1e1e';
+        } else {
+            header.style.backgroundColor = '';
+        }
+    }
+
+    // Call initially and whenever theme changes
+    updateHeaderDarkMode();
+    document.body.addEventListener('click', function() {
+        setTimeout(updateHeaderDarkMode, 10);
+    });
+});
+
+//for scroll button
+// Scroll to Top Button
+const scrollToTopBtn = document.getElementById('scroll-to-top');
+
+window.addEventListener('scroll', function() {
+    if (window.pageYOffset > 300) {
+        scrollToTopBtn.classList.add('visible');
+    } else {
+        scrollToTopBtn.classList.remove('visible');
+    }
+});
+
+scrollToTopBtn.addEventListener('click', function() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
 });

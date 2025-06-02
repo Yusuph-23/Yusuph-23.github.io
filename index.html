@@ -44,230 +44,226 @@
         <link rel="stylesheet" href="style.css">
     </head>
 
-<body class="bg-white">
-    <header class="gradient-header p-4 shadow-md container mx-auto fixed top-0 left-0 right-0 z-50">
-        <div class="flex justify-between items-center w-full">
-            <h1 class="text-white text-3xl font-bold">Yuzhom Studio</h1>
-            <div class="flex items-center">
-                <button id="themeToggle" class="bg-white text-[var(--color-pink)] p-2 rounded-full shadow-md transition duration-300 ease-in-out hover:scale-110 ml-4">
-                    <i class="fas fa-moon text-xl"></i> </button>
-                <button id="menuToggle" class="sm:hidden text-white text-2xl focus:outline-none ml-4">
-                    <i class="fas fa-bars"></i>
-                </button>
+    <body>
+        <header>
+            <div class="container">
+                <div class="logo">
+                    <a href="#home">Yuzhom<span>Studio</span></a>
+                </div>
+                <nav class="main-nav">
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#services">Services</a></li>
+                        <li><a href="#portfolio">Portfolio</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <div class="header-right">
+                    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
+                        <i class="fas fa-moon"></i>
+                        <i class="fas fa-sun"></i>
+                    </button>
+                    <div class="mobile-menu-btn">
+                        <i class="fas fa-bars"></i>
+                    </div>
+                </div>
             </div>
-        </div>
-        <nav id="mainNav" class="hidden sm:block w-full">
-            <ul class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-4 mt-4 sm:mt-0 items-center justify-center">
-                <li><a href="#home" class="nav-link text-white hover:text-gray-200 text-lg font-medium p-2 rounded-md transition duration-300 ease-in-out hover:bg-[var(--color-pink)]"><i class="fas fa-home mr-2"></i>Home</a></li>
-                <li><a href="#portfolio" class="nav-link text-white hover:text-gray-200 text-lg font-medium p-2 rounded-md transition duration-300 ease-in-out hover:bg-[var(--color-pink)]"><i class="fas fa-grip-horizontal mr-2"></i>Portfolio</a></li>
-                <li><a href="#about" class="nav-link text-white hover:text-gray-200 text-lg font-medium p-2 rounded-md transition duration-300 ease-in-out hover:bg-[var(--color-pink)]"><i class="fas fa-info-circle mr-2"></i>About</a></li>
-                <li><a href="#services" class="nav-link text-white hover:text-gray-200 text-lg font-medium p-2 rounded-md transition duration-300 ease-in-out hover:bg-[var(--color-pink)]"><i class="fas fa-briefcase mr-2"></i>Services</a></li>
-                <li><a href="#contact" class="nav-link text-white hover:text-gray-200 text-lg font-medium p-2 rounded-md transition duration-300 ease-in-out hover:bg-[var(--color-pink)]"><i class="fas fa-envelope mr-2"></i>Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main class="container mx-auto p-6 my-8 bg-white shadow-lg">
-        <section id="home" class="text-center mb-12 py-16 gradient-section-bg-1 text-white shadow-lg">
-            <h2 class="text-5xl font-extrabold mb-4 animate-pulse">Transforming ideas into stunning visuals</h2>
-            <p class="text-xl max-w-3xl mx-auto mb-8">
-                I'm a Motion Graphics Specialist passionate about bringing ideas to life with dynamic visuals and compelling animations.
-            </p>
-            <a href="#portfolio" class="bg-[var(--color-pink)] text-white text-2xl font-bold py-4 px-10 rounded-full hover:bg-pink-600 transition duration-300 ease-in-out shadow-xl">
-                <i class="fas fa-play-circle mr-3"></i>View My Portfolio
-            </a>
-        </section>
-
-        <section id="portfolio" class="mb-12 py-12">
-            <h2 class="text-4xl font-bold text-[var(--color-pink)] text-center mb-8">Featured Work</h2>
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div class="bg-white p-6 shadow-md border border-[var(--color-light-blue)] transform transition duration-300 hover:scale-105">
-                    <img src="https://media.giphy.com/media/j0PJNh3mqPfg9IpPpH/giphy.gif" alt="Motion Graphics Project 1" class="w-full h-auto mb-4 rounded-md">
-                    <h3 class="text-2xl font-semibold text-[var(--color-dark-text)] mb-2">Explainer Video</h3>
-                    <p class="text-gray-700 text-base mb-3">
-                        An animated and motion explainer video simplifying branding concepts for a startup.
-                    </p>
-                    <a href="videos/video branding.mov" class="text-[var(--color-pink)] hover:underline font-medium"><i class="fas fa-external-link-alt mr-2"></i>Watch Video</a>
-                </div>
-
-                <div class="bg-white p-6 shadow-md border border-[var(--color-pink)] transform transition duration-300 hover:scale-105">
-                    <img src="https://media4.giphy.com/media/v1.Y2lkPTc5MGI3NjExNzYwdmRiZTYybnpvOWx1Y25obDZ0bDJhenVmYWJ0YTdsM25udXZ5NiZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9dg/PvC89If7T3NvovNc0N/giphy.gif">
-                    <h3 class="text-2xl font-semibold text-[var(--color-dark-text)] mb-2">Events branding</h3>
-                    <p class="text-gray-700 text-base mb-3">
-                        High-energy broadcast promotion package for a company or personal program.
-                    </p>
-                    <a href="videos/votes.mp4" class="text-[var(--color-light-blue)] hover:underline font-medium"><i class="fas fa-external-link-alt mr-2"></i>Watch Video</a>
-                </div>
-
-                <div class="bg-white p-6 shadow-md border border-[var(--color-light-blue)] transform transition duration-300 hover:scale-105">
-                    <img src="images/1.png" alt="Motion Graphics Project 3" class="w-full h-auto mb-4 rounded-md">
-                    <h3 class="text-2xl font-semibold text-[var(--color-dark-text)] mb-2">Brand Identity</h3>
-                    <p class="text-gray-700 text-base mb-3">
-                        Animated logo reveal and brand guidelines for an environmental initiative.
-                    </p>
-                    <a href="videos/logo_1.mov" class="text-[var(--color-pink)] hover:underline font-medium"><i class="fas fa-external-link-alt mr-2"></i>Watch Video</a>
-                </div>
-
-                <div class="bg-white p-6 shadow-md border border-[var(--color-light-blue)] transform transition duration-300 hover:scale-105">
-                    <img src="images/event.png" alt="" class="w-full h-auto mb-4 rounded-md">
-                    <h3 class="text-2xl font-semibold text-[var(--color-dark-text)] mb-2">Events promos</h3>
-                    <p class="text-gray-700 text-base mb-3">
-                        Graphics design for various purposes.
-                    </p>
-                    
-                </div>
-
-                <div class="bg-white p-6 shadow-md border border-[var(--color-light-blue)] transform transition duration-300 hover:scale-105">
-                    <img src="images/holy.png" alt="Motion Graphics Project 5" class="w-full h-auto mb-4 rounded-md">
-                    <h3 class="text-2xl font-semibold text-[var(--color-dark-text)] mb-2">Celebrations </h3>
-                    <p class="text-gray-700 text-base mb-3">
-                        Graphics design for promoting the celebration events and acts.
-                    </p>
-                   
-                </div>
-                <div class="bg-white p-6 shadow-md border border-[var(--color-pink)] transform transition duration-300 hover:scale-105">
-                    <img src="images/project6_thumbnail.jpg" alt="Motion Graphics Project 6" class="w-full h-auto mb-4 rounded-md">
-                    <h3 class="text-2xl font-semibold text-[var(--color-dark-text)] mb-2">Social Media Animation</h3>
-                    <p class="text-gray-700 text-base mb-3">
-                        Short, engaging animations tailored for various social media platforms.
-                    </p>
-                   
+        </header>
+    
+        <section id="home" class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1>Creative Graphics & Motion Design</h1>
+                    <p>We transform ideas into visually stunning experiences</p>
+                    <a href="#portfolio" class="btn">View Our Work</a>
                 </div>
             </div>
         </section>
-
-        <section id="about" class="relative py-12 gradient-section-bg-2 text-white shadow-lg mb-12 pt-24">
-            <div class="max-w-4xl mx-auto text-center">
-                <img src="images/y.jpg" alt="Motion Graphics Specialist Profile Picture"
-                     class="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-36 h-36 rounded-full object-cover border-4 border-white shadow-lg">
-
-                <h2 class="text-4xl font-bold mb-6">About My Craft</h2>
-                <p class="text-lg mb-6">
-                    With a keen eye for detail and a passion for storytelling, I specialize in creating engaging motion graphics for various platforms, from corporate videos to social media content. My expertise includes:
-                </p>
-                <div class="flex flex-wrap justify-center gap-4 text-xl font-medium">
-                    <span class="bg-white text-[var(--color-dark-text)] py-2 px-4 rounded-full shadow-md"><i class="fas fa-video mr-2"></i>After Effects</span>
-                    <span class="bg-white text-[var(--color-dark-text)] py-2 px-4 rounded-full shadow-md"><i class="fas fa-edit mr-2"></i>Photoshop</span>
-                    <span class="bg-white text-[var(--color-dark-text)] py-2 px-4 rounded-full shadow-md"><i class="fas fa-bezier-curve mr-2"></i>Illustrator</span>
-                    <span class="bg-white text-[var(--color-dark-text)] py-2 px-4 rounded-full shadow-md"><i class="fas fa-edit mr-2"></i>Premiere Pro</span>
-                    <span class="bg-white text-[var(--color-dark-text)] py-2 px-4 rounded-full shadow-md"><i class="fas fa-lightbulb mr-2"></i>Creative Concepting</span>
-                </div>
-            </div>
-        </section>
-
-        <section id="services" class="py-12 bg-white shadow-lg mb-12">
-            <div class="max-w-4xl mx-auto text-center">
-                <h2 class="text-4xl font-bold text-[var(--color-pink)] mb-6">What I Offer</h2>
-                <p class="text-lg text-gray-700 mb-8">
-                    My services are designed to bring your vision to life through captivating motion.
-                </p>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <div class="bg-[var(--color-light-blue)] p-6 shadow-md transform transition duration-300 hover:scale-105">
-                        <i class="fas fa-film text-white text-4xl mb-4"></i>
-                        <h3 class="text-white text-2xl font-semibold mb-3">Explainer Videos</h3>
-                        <p class="text-white text-base">
-                            Simplifying complex ideas into engaging, easy-to-understand animated videos.
-                        </p>
+    
+        <section id="services" class="services">
+            <div class="container">
+                <h2 class="section-title">Our Services</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <i class="fas fa-paint-brush"></i>
+                        <h3>Graphic Design</h3>
+                        <p>Logo design, branding, print materials, and digital graphics that make your business stand out.</p>
                     </div>
-                    <div class="bg-[var(--color-pink)] p-6 shadow-md transform transition duration-300 hover:scale-105">
-                        <i class="fas fa-tv text-white text-4xl mb-4"></i>
-                        <h3 class="text-white text-2xl font-semibold mb-3">Broadcast Graphics</h3>
-                        <p class="text-white text-base">
-                            Dynamic intros, lower thirds, and transitions for television and streaming.
-                        </p>
+                    <div class="service-card">
+                        <i class="fas fa-film"></i>
+                        <h3>Motion Graphics</h3>
+                        <p>Animated visuals, explainer videos, and dynamic content that engages your audience.</p>
                     </div>
-                    <div class="bg-[var(--color-light-blue)] p-6 shadow-md transform transition duration-300 hover:scale-105">
-                        <i class="fas fa-lightbulb text-white text-4xl mb-4"></i>
-                        <h3 class="text-white text-2xl font-semibold mb-3">Brand Animation</h3>
-                        <p class="text-white text-base">
-                            Bringing logos and brand elements to life with unique and memorable animations.
-                        </p>
-                    </div>
-                    <div class="bg-[var(--color-pink)] p-6 shadow-md transform transition duration-300 hover:scale-105">
-                        <i class="fas fa-share-alt text-white text-4xl mb-4"></i>
-                        <h3 class="text-white text-2xl font-semibold mb-3">Social Media Content</h3>
-                        <p class="text-white text-base">
-                            Eye-catching animated posts, stories, and ads optimized for social platforms.
-                        </p>
-                    </div>
-                    <div class="bg-[var(--color-light-blue)] p-6 shadow-md transform transition duration-300 hover:scale-105">
-                        <i class="fas fa-chart-bar text-white text-4xl mb-4"></i>
-                        <h3 class="text-white text-2xl font-semibold mb-3">Infographics & Data Viz</h3>
-                        <p class="text-white text-base">
-                            Transforming data into clear, compelling animated infographics.
-                        </p>
-                    </div>
-                    <div class="bg-[var(--color-pink)] p-6 shadow-md transform transition duration-300 hover:scale-105">
-                        <i class="fas fa-puzzle-piece text-white text-4xl mb-4"></i>
-                        <h3 class="text-white text-2xl font-semibold mb-3">Custom Animation</h3>
-                        <p class="text-white text-base">
-                            Tailored animation solutions for unique projects and creative visions.
-                        </p>
+                    <div class="service-card">
+                        <i class="fas fa-ad"></i>
+                        <h3>Advertising Design</h3>
+                        <p>Eye-catching ads for social media, websites, and print that convert viewers to customers.</p>
                     </div>
                 </div>
             </div>
         </section>
-
-        <section id="contact" class="max-w-4xl mx-auto p-6 my-8 bg-white shadow-lg">
-            <section class="text-center mb-8">
-                <h2 class="text-4xl font-bold text-[var(--color-pink)] mb-4">Get in Touch</h2>
-                <p class="text-lg text-gray-700 max-w-3xl mx-auto">
-                    We'd love to hear from you! Please fill out the form below or use the contact information provided.
-                </p>
-            </section>
-
-            <section class="max-w-2xl mx-auto bg-white p-8 border border-gray-200 shadow-xl mb-8">
-                <form class="space-y-6">
-                    <div>
-                        <label for="name" class="block text-[var(--color-dark-text)] text-lg font-medium mb-2">
-                            <i class="fas fa-user mr-2 text-[var(--color-pink)]"></i>Name
-                        </label>
-                        <input type="text" id="name" name="name" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--color-pink)]" placeholder="Your Name" required>
-                    </div>
-                    <div>
-                        <label for="email" class="block text-[var(--color-dark-text)] text-lg font-medium mb-2">
-                            <i class="fas fa-at mr-2 text-[var(--color-pink)]"></i>Email
-                        </label>
-                        <input type="email" id="email" name="email" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--color-pink)]" placeholder="your.email@example.com" required>
-                    </div>
-                    <div>
-                        <label for="subject" class="block text-[var(--color-dark-text)] text-lg font-medium mb-2">
-                            <i class="fas fa-tag mr-2 text-[var(--color-pink)]"></i>Subject
-                        </label>
-                        <input type="text" id="subject" name="subject" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--color-pink)]" placeholder="Subject of your message" required>
-                    </div>
-                    <div>
-                        <label for="message" class="block text-[var(--color-dark-text)] text-lg font-medium mb-2">
-                            <i class="fas fa-comment-alt mr-2 text-[var(--color-pink)]"></i>Message
-                        </label>
-                        <textarea id="message" name="message" rows="5" class="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-[var(--color-pink)]" placeholder="Your message..." required></textarea>
-                    </div>
-                    <div class="text-center">
-                        <button type="submit" class="bg-[var(--color-pink)] text-white text-xl font-bold py-3 px-8 rounded-md hover:bg-pink-600 transition duration-300 ease-in-out shadow-lg">Send Message</button>
-                    </div>
-                </form>
-            </section>
-
-            <section class="mt-8 text-center gradient-footer-bg p-6 shadow-md">
-                <h3 class="text-2xl font-bold text-white mb-4">Other Ways to Reach Us</h3>
-                <div class="flex flex-col sm:flex-row justify-center items-center space-y-4 sm:space-y-0 sm:space-x-8">
-                    <p class="text-white text-lg"><strong class="font-semibold"><i class="fas fa-envelope mr-2"></i>Email:</strong> info@motionforgestudio.com</p>
-                    <p class="text-white text-lg"><strong class="font-semibold"><i class="fas fa-phone mr-2"></i>Phone:</strong> +255 674-969-9017</p>
-                    <p class="text-white text-lg"><strong class="font-semibold"><i class="fas fa-map-marker-alt mr-2"></i>Address:</strong> 123 Iyumbu, Dodoma, Tanzania</p>
+    
+        <section id="portfolio" class="portfolio">
+            <div class="container">
+                <h2 class="section-title">Our Portfolio</h2>
+                <div class="portfolio-filter">
+                    <button class="filter-btn active" data-filter="all">All</button>
+                    <button class="filter-btn" data-filter="graphics">Graphics</button>
+                    <button class="filter-btn" data-filter="motion">Motion</button>
                 </div>
-            </section>
+                <div class="portfolio-grid">
+                    <div class="portfolio-item" data-category="graphics">
+                        <img src="https://via.placeholder.com/600x400/1a3a6a/ffffff?text=Branding+Project" alt="Branding Project">
+                        <div class="portfolio-overlay">
+                            <h3>Branding Project</h3>
+                            <p>Logo & Identity Design</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-item" data-category="motion">
+                        <img src="https://via.placeholder.com/600x400/1a3a6a/ffffff?text=Explainer+Video" alt="Explainer Video">
+                        <div class="portfolio-overlay">
+                            <h3>Product Explainer</h3>
+                            <p>Motion Graphics</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-item" data-category="graphics">
+                        <img src="https://via.placeholder.com/600x400/1a3a6a/ffffff?text=Print+Design" alt="Print Design">
+                        <div class="portfolio-overlay">
+                            <h3>Brochure Design</h3>
+                            <p>Print Design</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-item" data-category="motion">
+                        <img src="https://via.placeholder.com/600x400/1a3a6a/ffffff?text=Social+Media+Ads" alt="Social Media Ads">
+                        <div class="portfolio-overlay">
+                            <h3>Social Campaign</h3>
+                            <p>Animated Ads</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-item" data-category="graphics">
+                        <img src="https://via.placeholder.com/600x400/1a3a6a/ffffff?text=Packaging+Design" alt="Packaging Design">
+                        <div class="portfolio-overlay">
+                            <h3>Product Packaging</h3>
+                            <p>Graphic Design</p>
+                        </div>
+                    </div>
+                    <div class="portfolio-item" data-category="motion">
+                        <img src="https://via.placeholder.com/600x400/1a3a6a/ffffff?text=Title+Sequence" alt="Title Sequence">
+                        <div class="portfolio-overlay">
+                            <h3>Title Sequence</h3>
+                            <p>Motion Design</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
-    </main>
-
-    <footer class="gradient-footer-bg p-4 mt-auto shadow-inner">
-        <div class="container mx-auto text-center text-white text-sm">
-            &copy; 2025 MotionForge Studio. All rights reserved.
-        </div>
-    </footer>
-
-    <button id="scrollTopBtn" title="Go to top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
+    
+        <section id="about" class="about">
+            <div class="container">
+                <div class="about-content">
+                    <h2 class="section-title">About Yuzhom Studio</h2>
+                    <p>Yuzhom Studio is a creative design agency specializing in graphic design and motion graphics. Founded in 2020, we've been helping businesses and individuals bring their visual ideas to life with innovative design solutions.</p>
+                    <p>Our team of passionate designers combines artistic vision with technical expertise to deliver projects that not only look great but also communicate effectively and engage audiences.</p>
+                    <div class="stats">
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="150">0</span>+
+                            <span class="stat-label">Projects</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="50">0</span>+
+                            <span class="stat-label">Clients</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="4">0</span>+
+                            <span class="stat-label">Years</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <div class="image-container">
+                        <img src="team.jpg" alt="Yuzhom Studio Team">
+                        <div class="image-overlay">
+                            <h3>Meet Our Team</h3>
+                            <p>Creative professionals dedicated to excellence</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    
+        <section id="contact" class="contact">
+            <div class="container">
+                <h2 class="section-title">Get In Touch</h2>
+                <div class="contact-content">
+                    <div class="contact-info">
+                        <h3>Contact Information</h3>
+                        <p><i class="fas fa-envelope"></i> yusuphpro23@gmail.com</p>
+                        <p><i class="fas fa-phone"></i> +255 (674) 969-017</p>
+                        <p><i class="fas fa-map-marker-alt"></i> 124 UDOM, Dodoma-Tanzania</p>
+                        <div class="social-links">
+                            <a href="#"><i class="fab fa-behance"></i></a>
+                            <a href="#"><i class="fab fa-dribbble"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                            <a href="#"><i class="fab fa-linkedin"></i></a>
+                        </div>
+                    </div>
+                    <form class="contact-form">
+                        <div class="form-group">
+                            <input type="text" placeholder="Your Name" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" placeholder="Your Email" required>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" placeholder="Subject">
+                        </div>
+                        <div class="form-group">
+                            <textarea placeholder="Your Message" required></textarea>
+                        </div>
+                        <button type="submit" class="btn">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </section>
+    
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-logo">
+                        <a href="#home">Yuzhom<span>Studio</span></a>
+                        <p>Creative Graphics & Motion Design</p>
+                        <img src="Logo.png" alt="" srcset="" width="100" height="100">
+                    </div>
+                    <div class="footer-links">
+                        <h3>Quick Links</h3>
+                        <ul>
+                            <li><a href="#home">Home</a></li>
+                            <li><a href="#services">Services</a></li>
+                            <li><a href="#portfolio">Portfolio</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#contact">Contact</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-newsletter">
+                        <h3>Newsletter</h3>
+                        <p>Subscribe to our newsletter for updates and offers.</p>
+                        <form>
+                            <input type="email" placeholder="Your Email">
+                            <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                        </form>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; <span id="year"></span> Yuzhom Studio. All Rights Reserved.</p>
+                </div>
+            </div>
+        </footer>
+    
+        <!-- Scroll to Top Button -->
+        <button id="scroll-to-top" class="scroll-to-top" aria-label="Scroll to top">
+            <i class="fas fa-arrow-up"></i>
+        </button>
 
     <script src="index.js"></script>
 </body>
