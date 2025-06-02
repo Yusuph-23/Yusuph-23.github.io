@@ -623,24 +623,24 @@ footer {
 
 /* Dark Mode Styles */
 .dark-mode {
-    /* Dark mode variables */
-    --dark-primary: #3a7bd5;  /* Brighter blue for better visibility */
-    --dark-secondary: #ff8c42; /* More vibrant orange */
-    --dark-bg: #121826;       /* Dark blue-gray instead of pure black */
-    --dark-card: #1e2432;     /* Slightly lighter than background */
-    --dark-text: #f0f4f8;     /* Soft white for better readability */
-    --dark-text-light: #c2c8d0; /* Light gray for secondary text */
-    --dark-border: #2d3648;   /* Subtle borders */
+    --primary-color: var(--dark-primary);
+    --secondary-color: var(--dark-secondary);
+    --dark-color: var(--dark-bg);
+    --light-color: var(--dark-card);
+    --text-color: var(--dark-text);
+    --text-light: var(--dark-text-light);
+    --white: var(--dark-bg);
+    --black: var(--dark-text);
 }
 
 .dark-mode body {
-    background-color: var(--dark-color);
-    color: var(--text-color);
+    background-color: var(--dark-bg);
+    color: var(--dark-text);
 }
 
 .dark-mode header {
-    background-color: var(--light-color);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+    background-color: var(--dark-card);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
 }
 
 .dark-mode .service-card,
@@ -648,21 +648,61 @@ footer {
 .dark-mode .contact-form input,
 .dark-mode .contact-form textarea,
 .dark-mode .footer-newsletter input {
-    background-color: #2a2a2a;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    background-color: var(--dark-card);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border: 1px solid var(--dark-border);
 }
 
 .dark-mode .contact-info {
-    background-color: var(--primary-color);
+    background-color: var(--dark-primary);
+    border: 1px solid var(--dark-primary);
 }
 
 .dark-mode .form-group input,
 .dark-mode .form-group textarea {
-    border-color: #444;
+    border-color: var(--dark-border);
+    background-color: var(--dark-card);
+    color: var(--dark-text);
 }
 
 .dark-mode .footer-bottom {
-    border-top-color: #444;
+    border-top-color: var(--dark-border);
+}
+
+.dark-mode .section-title {
+    color: var(--dark-primary);
+}
+
+.dark-mode .theme-toggle {
+    color: var(--dark-text);
+}
+
+.dark-mode .main-nav ul li a {
+    color: var(--dark-text-light);
+}
+
+.dark-mode .main-nav ul li a:hover {
+    color: var(--dark-secondary);
+}
+
+.dark-mode .portfolio-overlay,
+.dark-mode .image-overlay {
+    background: linear-gradient(transparent, rgba(58, 123, 213, 0.9));
+}
+
+.dark-mode .stat-number {
+    color: var(--dark-secondary);
+}
+
+.dark-mode .filter-btn {
+    border-color: var(--dark-primary);
+    color: var(--dark-text);
+}
+
+.dark-mode .filter-btn.active, 
+.dark-mode .filter-btn:hover {
+    background-color: var(--dark-primary);
+    color: var(--dark-text);
 }
 
 /* Animations */
