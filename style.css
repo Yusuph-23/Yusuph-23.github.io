@@ -623,24 +623,24 @@ footer {
 
 /* Dark Mode Styles */
 .dark-mode {
-    --primary-color: var(--dark-primary);
-    --secondary-color: var(--dark-secondary);
-    --dark-color: var(--dark-bg);
-    --light-color: var(--dark-card);
-    --text-color: var(--dark-text);
-    --text-light: var(--dark-text-light);
-    --white: var(--dark-bg);
-    --black: var(--dark-text);
+    --primary-color: #4a89dc;
+    --secondary-color: #ff9e3f;
+    --dark-color: #121212;
+    --light-color: #1e1e1e;
+    --text-color: #f0f0f0;
+    --text-light: #b0b0b0;
+    --white: #121212;
+    --black: #f8f9fa;
 }
 
 .dark-mode body {
-    background-color: var(--dark-bg);
-    color: var(--dark-text);
+    background-color: rgb(13, 13, 37);
+    color: var(--text-color);
 }
 
 .dark-mode header {
-    background-color: var(--dark-card);
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
+    background-color: var(--light-color);
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
 }
 
 .dark-mode .service-card,
@@ -648,63 +648,22 @@ footer {
 .dark-mode .contact-form input,
 .dark-mode .contact-form textarea,
 .dark-mode .footer-newsletter input {
-    background-color: var(--dark-card);
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-    border: 1px solid var(--dark-border);
+    background-color: #2a2a2a;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
 }
 
 .dark-mode .contact-info {
-    background-color: var(--dark-primary);
-    border: 1px solid var(--dark-primary);
+    background-color: var(--primary-color);
 }
 
 .dark-mode .form-group input,
 .dark-mode .form-group textarea {
-    border-color: var(--dark-border);
-    background-color: var(--dark-card);
-    color: var(--dark-text);
+    border-color: #444;
 }
 
 .dark-mode .footer-bottom {
-    border-top-color: var(--dark-border);
+    border-top-color: #444;
 }
-
-.dark-mode .section-title {
-    color: var(--dark-primary);
-}
-
-.dark-mode .theme-toggle {
-    color: var(--dark-text);
-}
-
-.dark-mode .main-nav ul li a {
-    color: var(--dark-text-light);
-}
-
-.dark-mode .main-nav ul li a:hover {
-    color: var(--dark-secondary);
-}
-
-.dark-mode .portfolio-overlay,
-.dark-mode .image-overlay {
-    background: linear-gradient(transparent, rgba(58, 123, 213, 0.9));
-}
-
-.dark-mode .stat-number {
-    color: var(--dark-secondary);
-}
-
-.dark-mode .filter-btn {
-    border-color: var(--dark-primary);
-    color: var(--dark-text);
-}
-
-.dark-mode .filter-btn.active, 
-.dark-mode .filter-btn:hover {
-    background-color: var(--dark-primary);
-    color: var(--dark-text);
-}
-
 /* Animations */
 @keyframes fadeInDown {
     from {
